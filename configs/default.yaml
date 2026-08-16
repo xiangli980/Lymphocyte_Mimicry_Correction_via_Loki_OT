@@ -1,0 +1,14 @@
+tissue_reasoning:
+  backbone: resnet50        # torchvision backbone for patch feature extraction
+  pretrained: true          # use ImageNet-pretrained weights
+  patch_size: 64            # side length of cell-centred patch (pixels)
+  num_tissue_classes: 5     # number of tissue region types in the mask
+  context_radius: 32        # radius (pixels) for local tissue histogram
+
+loki_ot:
+  epsilon: 0.1              # entropic regularisation strength
+  rho: 1.0                  # KL marginal relaxation (higher → more balanced)
+  max_iter: 1000            # maximum Sinkhorn iterations
+  tol: 1.0e-9               # convergence tolerance
+  alpha: 0.5                # weight for appearance vs. tissue cost
+  mass_threshold: 0.0       # transport mass threshold for mimicker removal
