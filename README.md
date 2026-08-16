@@ -102,7 +102,7 @@ corrected_labels = pipeline.run(
 
 Edit `configs/default.yaml` to adjust hyperparameters such as:
 
-- `tissue_reasoning.num_classes` — number of tissue types
+- `tissue_reasoning.num_tissue_classes` — number of tissue types
 - `loki_ot.epsilon` — entropic regularisation for OT
 - `loki_ot.rho` — marginal relaxation for unbalanced OT
 

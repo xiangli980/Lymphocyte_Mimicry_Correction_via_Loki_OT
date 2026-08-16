@@ -53,7 +53,8 @@ class RegionExtractor:
             device if device else ("cuda" if torch.cuda.is_available() else "cpu")
         )
 
-        encoder = getattr(models, backbone)(pretrained=pretrained)
+        weights = "DEFAULT" if pretrained else None
+        encoder = getattr(models, backbone)(weights=weights)
         # Remove the classification head — keep up to the global average pool.
         self.feature_dim: int = encoder.fc.in_features
         self.encoder = nn.Sequential(*list(encoder.children())[:-1]).to(self.device)

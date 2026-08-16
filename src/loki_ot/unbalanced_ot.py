@@ -71,13 +71,13 @@ def sinkhorn_kl_unbalanced(
     T_prev = np.zeros((M, N))
 
     for _ in range(max_iter):
+        # Update u first: soft marginal on a.
+        log_Kv = _log_sum_exp(log_K + log_v[None, :], axis=1)  # (M,)
+        log_u = lam * (np.log(a + 1e-300) - log_Kv)
+
         # Update v: soft marginal on b.
         log_KTu = _log_sum_exp(log_K + log_u[:, None], axis=0)  # (N,)
         log_v = lam * (np.log(b + 1e-300) - log_KTu)
-
-        # Update u: soft marginal on a.
-        log_Kv = _log_sum_exp(log_K + log_v[None, :], axis=1)  # (M,)
-        log_u = lam * (np.log(a + 1e-300) - log_Kv)
 
         # Transport plan in primal.
         log_T = log_K + log_u[:, None] + log_v[None, :]
