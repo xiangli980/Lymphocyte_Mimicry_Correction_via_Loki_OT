@@ -1,7 +1,7 @@
-# MLLM Tissue Reasoning Informed Mimicry-Robust Cell Classification via Optimal Transport
+# Lymphocyte Mimicry Correction via Region-Level Tissue Reasoning and Unbalanced Optimal Transport
 
-Code for *"MLLM Tissue Reasoning Informed Mimicry-Robust Cell
-Classification via Optimal Transport"*.
+Code for *"Lymphocyte Mimicry Correction via Region-Level Tissue Reasoning
+and Unbalanced Optimal Transport"*. Paper: https://arxiv.org/abs/2608.17151
 
 A two-stage cell classification pipeline built on [CellViT++](https://github.com/TIO-IKIM/CellViT-plus-plus):
 Stage 1 trains a context-aware classifier directly against region-level MLLM
