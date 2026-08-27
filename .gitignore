@@ -1,0 +1,11 @@
+# External dependency, cloned by the setup step in README.md — not vendored
+cellvit_repo/
+
+# Large downloaded/generated artifacts — not source
+weights/
+outputs/
+__pycache__/
+*.pyc
+
+# Local environment files
+.env
